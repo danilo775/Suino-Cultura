@@ -1,0 +1,38 @@
+/* Estilizando o rótulo (label) */
+label {
+    color: #121212; /* Cor do texto do rótulo */
+    font-weight: bold; /* Estilo da fonte (negrito) */
+  }
+  
+  /* Estilizando o campo de entrada (input) */
+  input {
+    color: #060606; /* Cor do texto do campo de entrada */
+    font-family: 'Arial', sans-serif; /* Escolha da fonte */
+    border: 1px solid #ccc; /* Cor da borda do campo de entrada */
+    padding: 8px; /* Espaçamento interno do campo de entrada */
+  }
+  
+  /* Estilizando mensagens de erro */
+  .alert-danger {
+    color: #721c24; /* Cor do texto de erro */
+    background-color: #f8d7da; /* Cor de fundo de erro */
+    border: 1px solid #f5c6cb; /* Cor da borda de erro */
+    padding: 8px; /* Espaçamento interno das mensagens de erro */
+    margin-top: 5px; /* Espaçamento superior */
+  }
+  
+  /* Estilizando o botão */
+  button {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    border: none; /* Remover a borda do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Cursor do mouse */
+  }
+  
+  /* Estilizando a borda do campo de entrada quando inválido */
+  .input-invalid {
+    border-color: #dc3545; /* Cor da borda quando o campo é inválido */
+  }
+  
