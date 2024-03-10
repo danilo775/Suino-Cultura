@@ -1,0 +1,48 @@
+<div id="corpo">
+    
+    <div class="container">
+        
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                        
+                    <form #autenticaForm="ngForm" (ngSubmit)="onSubmit(autenticaForm)" *ngIf="!estaCarregando"
+                        class="form" id="form">
+                        <h3 class="text-center text-dark mt-3">{{ modoLogin ? 'Login' : 'Inscrever-se' }}</h3>
+                        <div class="form-group m-3">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control mt-1" id="email" name="email" ngModel email required
+                                #email="ngModel">
+                        </div>
+                        <div class="alert alert-danger m-3" *ngIf="!email.valid && email.touched">
+                            E-mail é obrigatório.
+                        </div>
+
+                        <div class="form-group m-3">
+                            <label for="password">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" ngModel
+                                minlength="6" required #password="ngModel">
+                        </div>
+
+                        <div class="alert alert-danger m-3" *ngIf="!password.valid && password.touched">
+                            Senha é obrigatória.
+                        </div>
+                        <div class="alert alert-danger m-3" *ngIf="erro">{{ erro }}</div>
+
+                        <div class="form-group m-3">
+                            <label for="remember-me" class="text-info">
+                                <input id="inscrever" name="remember-me" (click)="onTrocarModo()"
+                                    type="button" value="{{ modoLogin ? 'Inscrevar-se' : 'Voltar ao Login' }}">
+                            </label><br>
+
+                            <button class="btn btn-dark btn-md mt-3" type="submit"
+                                [disabled]="!autenticaForm.valid">{{ modoLogin ? 'Login' : 'Inscrever' }}</button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
