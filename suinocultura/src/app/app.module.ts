@@ -17,6 +17,9 @@ import { SuinoEditarComponent } from './components/suino-editar/suino-editar.com
 import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
+import { ControleDePesoComponent } from './controle-de-peso/controle-de-peso.component';
+import { ListaSuinosComponent } from './lista-suinos/lista-suinos.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { EditarPesoComponent } from './components/editar-peso/editar-peso.compon
     SuinoEditarComponent,
     PesoFormComponent,
     ListaPesoComponent,
-    EditarPesoComponent
+    EditarPesoComponent,
+    ControleDePesoComponent,
+    ListaSuinosComponent
+    
   ],
   imports: [
     BrowserModule,
