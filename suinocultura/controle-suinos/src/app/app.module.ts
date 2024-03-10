@@ -18,9 +18,12 @@ import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
 import { IdadePipe } from './pipes/idade.pipe';
+<<<<<<< HEAD:suinocultura/controle-suinos/src/app/app.module.ts
 import { ContatoComponent } from './contato/contato.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { AuthGuardComponent } from './auth.guard/auth.guard.component';
+=======
+>>>>>>> main:suinocultura/src/app/app.module.ts
 
 @NgModule({
   declarations: [
@@ -33,10 +36,14 @@ import { AuthGuardComponent } from './auth.guard/auth.guard.component';
     PesoFormComponent,
     ListaPesoComponent,
     EditarPesoComponent,
+<<<<<<< HEAD:suinocultura/controle-suinos/src/app/app.module.ts
     IdadePipe,
     ContatoComponent,
     RodapeComponent,
     AuthGuardComponent
+=======
+    IdadePipe
+>>>>>>> main:suinocultura/src/app/app.module.ts
   ],
   imports: [
     BrowserModule,
