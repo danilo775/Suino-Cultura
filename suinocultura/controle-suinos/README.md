@@ -1,10 +1,23 @@
 # Suinocultura
 
+## Equipe
+Danilo 
+Ricardo dos Santos Silva FontEnd3
+
+## GitHub
+https://github.com/danilo775/Suino-Cultura/tree/main/suinocultura
+
+## Desenvolvimento
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Login 
+e-mail: danilo.uba@hotmail.com
+senha:danilo123
 
 ## Code scaffolding
 
@@ -25,3 +38,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
