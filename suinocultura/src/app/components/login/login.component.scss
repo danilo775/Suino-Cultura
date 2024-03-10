@@ -22,5 +22,12 @@ body {
 
   }
 
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
   
+  span.error {
+      font-size: 10px;
+      color: red;
+  }
  

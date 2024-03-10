@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, catchError, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../model/usuario.model';
+import { BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
-interface AuthResponseData {
+interface AuthResposeData {
   idToken: string;
   email: string;
   refreshToken: string;
@@ -11,46 +12,41 @@ interface AuthResponseData {
   localId: string;
   registered?: boolean;
 }
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class AutenticaService {
 
+export class AutenticaService {
   usuario = new BehaviorSubject<Usuario>(new Usuario('', '', '', new Date()));
+  loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
   signupUser(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[AIzaSyABFRYwt1nBvk3bid38TE8lbsl0shMN4aQ]', 
-    {
-       email: email,
-       password: password,
-       returnSecureToken: true
-    }).pipe(
-       tap(resData => {
-         const expiracaoData = new Date(new Date().getTime() + +resData.expiresIn * 1000);
-         const usuario = new Usuario(
-           resData.email,
-           resData.localId,
-           resData.idToken,
-           expiracaoData
-         );
- 
-         this.usuario.next(usuario);
-         localStorage.setItem('userData', JSON.stringify(usuario));
-       }),
-       catchError(error => {
-         console.log('Erro ao cadastrar usuário:', error); // Adicione este console.log para imprimir o objeto de erro completo
-         throw error; // Rethrow o erro para que o componente que chama a função signupUser possa lidar com ele
-       })
-    );
- }
- 
+   return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyABFRYwt1nBvk3bid38TE8lbsl0shMN4aQ', 
+   {
+      email: email,
+      password: password,
+      returnSecureToken: true
+   }).pipe(
+      tap(resData => {
+        const expiracaoData = new Date(new Date().getTime() + +resData.expiresIn * 1000);
+        const usuario = new Usuario(
+          resData.email,
+          resData.localId,
+          resData.idToken,
+          expiracaoData
+        );
+
+        this.usuario.next(usuario);
+        this.loggedIn.next(true);
+        localStorage.setItem('userData', JSON.stringify(usuario));
+      })
+   );
+  }
 
   loginUser(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyABFRYwt1nBvk3bid38TE8lbsl0shMN4aQ',
+    return this.http.post<AuthResposeData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyABFRYwt1nBvk3bid38TE8lbsl0shMN4aQ',
     {
       email: email,
       password: password,
@@ -65,6 +61,7 @@ export class AutenticaService {
           expiracaoData
         );
         this.usuario.next(usuario);
+        this.loggedIn.next(true);
         localStorage.setItem('userData', JSON.stringify(usuario));
     }),
    );
@@ -91,15 +88,17 @@ export class AutenticaService {
 
     if(loadedUser.token) {
       this.usuario.next(loadedUser);
+      this.loggedIn.next(true);
     }
-
 
   }
 
   logout() {
+    this.loggedIn.next(false); 
     this.usuario.next(new Usuario('', '', '', new Date()));
-
   }
 
-
+  isLogged(): boolean {
+    return this.usuario.value.token != null;
+  }
 }
