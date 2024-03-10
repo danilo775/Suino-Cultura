@@ -50,6 +50,10 @@ export class ListaPesoComponent  implements OnInit {
       this.rotas.navigate(['ep/' + id], { relativeTo: this.route });
      }, 2000);
   }
-
+  // movaErro(){
+  //   setTimeout(() => {
+  //     this.rotas.navigate(['listarSuinos']);
+  //   }, 2000);
+  // }
 
 }

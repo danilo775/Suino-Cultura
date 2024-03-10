@@ -1,6 +1,7 @@
+<div class="corpo">
 <form [formGroup]="pesoForm" (ngSubmit)="salvarPeso()" class="m-3" #formSuino="ngForm">
     <div class="form-group mt-3">
-      <label for="peso">Peso do Animal:</label>
+      <label for="peso" class="form-group mt-3">Peso do Animal:</label>
       <input type="string" id="peso" formControlName="peso" class="form-control" required>
       <div class="alert alert-danger" *ngIf="!peso?.valid && formSuino.touched">
         <p *ngIf="peso?.errors?.['required']">Peso é obrigatorio</p>
@@ -15,6 +16,6 @@
     </div>
   
  
-    <button type="submit" class="btn btn-primary mt-3">Atualizar</button>
+    <button type="submit" class="btn btn-dark mt-3">Atualizar</button>
   </form>
-  
+</div>
