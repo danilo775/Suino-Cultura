@@ -20,6 +20,7 @@ import { EditarPesoComponent } from './components/editar-peso/editar-peso.compon
 import { IdadePipe } from './pipes/idade.pipe';
 import { ContatoComponent } from './contato/contato.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { AuthGuardComponent } from './auth.guard/auth.guard.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RodapeComponent } from './rodape/rodape.component';
     EditarPesoComponent,
     IdadePipe,
     ContatoComponent,
-    RodapeComponent
+    RodapeComponent,
+    AuthGuardComponent
   ],
   imports: [
     BrowserModule,
