@@ -1,68 +1,71 @@
 <div class="corpo">
-<form [formGroup]="suinoForm" (ngSubmit)="adicionarSuino()" class="m-3" #formSuino="ngForm">
+  <form [formGroup]="suinoForm" (ngSubmit)="adicionarSuino()" class="m-3" #formSuino="ngForm">
 
 
-  <div class="row ">
-    <div class="form-group mt-3 col">
-    <label for="brincoAnimal">Brinco do Animal:</label>
-    <input type="string" id="brincoAnimal" formControlName="brincoAnimal" class="form-control" required>
-    <div class="alert alert-danger" *ngIf="!brincoAnimal?.valid && formSuino.touched">
-      <p *ngIf="brincoAnimal?.errors?.['required']">Brinco animal é obrigatorio</p>
-      <p *ngIf="brincoAnimal?.errors?.['pattern']">Apenas números são permitidos</p>     
+    <div class="row ">
+      <div class="form-group mt-3 col">
+        <label for="brincoAnimal">Brinco do Animal:</label>
+        <input type="string" id="brincoAnimal" formControlName="brincoAnimal" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="!brincoAnimal?.valid && formSuino.touched">
+          <p *ngIf="brincoAnimal?.errors?.['required']">Brinco animal é obrigatorio</p>
+          <p *ngIf="brincoAnimal?.errors?.['pattern']">Apenas números são permitidos</p>
+        </div>
+      </div>
+
+      <div class="form-group mt-3 col">
+        <label for="brincoPai">Brinco do pai:</label>
+        <input type="string" id="brincoPai" formControlName="brincoPai" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="formSuino.touched && !brincoPai?.valid ">
+          <p *ngIf="brincoPai?.errors?.['required']">Brinco do pai é obrigatorio</p>
+          <p *ngIf="brincoPai?.errors?.['pattern']">Apenas números são permitidos</p>
+        </div>
+      </div>
+
+      <div class="form-group mt-3 col">
+        <label for="brincoMae">Brinco da mãe:</label>
+        <input type="text" id="brincoMae" formControlName="brincoMae" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="!brincoMae?.valid && formSuino.touched">
+          <p *ngIf="brincoMae?.errors?.['required']">Brinco da mâe é obrigatorio</p>
+          <p *ngIf="brincoMae?.errors?.['pattern']">Apenas números são permitidos</p>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="row ">
+      <div class="form-group mt-4 col">
+        <label for="dataNascimento">Data de nascimento:</label>
+        <input type="date" id="dataNascimento" formControlName="dataNascimento" class="form-control">
+      </div>
+
+      <div class="form-group mt-4 col">
+        <label for="dataSaida">Data da saída:</label>
+        <input type="date" id="dataSaida" formControlName="dataSaida" class="form-control">
+      </div>
+    </div>
+
+
+    <div class="row ">
+   
+        <div class="form-group mt-5 col">
+          <label for="status">Status:</label>
+          <select class="form-select" id="status" formControlName="status">
+            <option disabled selected>Selecione o status</option>
+            <option value="ativo">Ativo</option>
+            <option value="vendido">Vendido</option>
+            <option value="morto">Morto</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-5 col">
+          <label for="sexo">Sexo:</label>
+          <select class="form-select" id="sexo" formControlName="sexo">
+            <option disabled selected>Selecione o sexo</option>
+            <option value="F">F</option>
+            <option value="M">M</option>
+          </select>
+        </div>
   
-  <div class="form-group mt-3 col">
-    <label for="brincoPai">Brinco do pai:</label>
-    <input type="string" id="brincoPai" formControlName="brincoPai" class="form-control" required>
-    <div class="alert alert-danger" *ngIf="formSuino.touched && !brincoPai?.valid " >
-      <p *ngIf="brincoPai?.errors?.['required']">Brinco do pai é obrigatorio</p>
-      <p *ngIf="brincoPai?.errors?.['pattern']">Apenas números são permitidos</p>     
     </div>
-  </div>
-
-  <div class="form-group mt-3 col">
-    <label for="brincoMae">Brinco da mãe:</label>
-    <input type="text" id="brincoMae" formControlName="brincoMae" class="form-control" required>
-    <div class="alert alert-danger" *ngIf="!brincoMae?.valid && formSuino.touched">
-      <p *ngIf="brincoMae?.errors?.['required']">Brinco da mâe é obrigatorio</p>
-      <p *ngIf="brincoMae?.errors?.['pattern']">Apenas números são permitidos</p>     
-    </div>
-  </div>
-  </div>
-
-  <div class="row ">
-    <div class="form-group mt-3 col">
-    <label for="dataNascimento">Data de nascimento:</label>
-    <input type="date" id="dataNascimento" formControlName="dataNascimento" class="form-control">
-  </div>
-
-  <div class="form-group mt-3 col">
-    <label for="dataSaida">Data da saída:</label>
-    <input type="date" id="dataSaida" formControlName="dataSaida" class="form-control">
-  </div>
-  </div>
-  <div class="form-row mt-3">
-    <div class="form-group col-md-6">
-      <label for="status">Status:</label>
-      <select class="form-select" id="status" formControlName="status">
-        <option disabled selected>Selecione o status</option>
-        <option value="ativo">Ativo</option>
-        <option value="vendido">Vendido</option>
-        <option value="morto">Morto</option>
-      </select>
-    </div>
-    
-    <div class="form-group col-md-6">
-      <label for="sexo">Sexo:</label>
-      <select class="form-select" id="sexo" formControlName="sexo">
-        <option disabled selected>Selecione o sexo</option>
-        <option value="F">F</option>
-        <option value="M">M</option>
-      </select>
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-dark mt-3">Cadastrar</button>
-</form>
+    <button type="submit" class="btn btn-dark mt-3">Cadastrar</button>
+  </form>
 </div>
