@@ -17,6 +17,7 @@ import { SuinoEditarComponent } from './components/suino-editar/suino-editar.com
 import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
+import { IdadePipe } from './pipes/idade.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditarPesoComponent } from './components/editar-peso/editar-peso.compon
     SuinoEditarComponent,
     PesoFormComponent,
     ListaPesoComponent,
-    EditarPesoComponent
+    EditarPesoComponent,
+    IdadePipe
   ],
   imports: [
     BrowserModule,
