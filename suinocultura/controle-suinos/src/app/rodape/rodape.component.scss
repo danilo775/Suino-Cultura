@@ -1,0 +1,28 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
