@@ -18,10 +18,17 @@ export class SuinoComponent  implements OnInit {
     this.getSuinos();
   }
 
-
-
   getSuinos() {
     this.bancoService.getSuino().subscribe(responseData => {
+      console.log(responseData);
+      this.loadedSuinos = responseData;
+      console.log(this.loadedSuinos);
+    });
+  }
+
+  // Adicione um novo método para obter suínos filtrados
+  getFilteredSuinos() {
+    this.bancoService.getFilteredSuino(this.filterTerm).subscribe(responseData => {
       console.log(responseData);
       this.loadedSuinos = responseData;
       console.log(this.loadedSuinos);
@@ -47,11 +54,8 @@ export class SuinoComponent  implements OnInit {
   rediracionaPrincipal(){
     setTimeout(() => {
      this.rotas.navigate(['listarSuinos']);
-    },1000);
+    }, 2000);
     
   }
-  deletarESeguir(id:any){
-    this.deletarSuino(id);
-    this.rediracionaPrincipal();
-  }
+
 }

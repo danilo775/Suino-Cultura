@@ -57,10 +57,6 @@ adicionarSuino(Suino: {
       deletarSuino(id: string) {
         return this.http.delete(`https://suinocultura-27005-default-rtdb.firebaseio.com/posts/${id}.json`);
       }
-      deletarPeso(id: string) {
-        return this.http.delete(`https://suinocultura-27005-default-rtdb.firebaseio.com/posts/${id}.json`);
-      }
-      
 
       editarSuino(id:string, SuinoData: {   
                                               brincoAnimal: number;
@@ -82,4 +78,15 @@ adicionarSuino(Suino: {
       }
     );
     }
+
+    getFilteredSuino(filterTerm: string) {
+  // Construa o URL para filtragem corretamente usando "equalTo"
+  const filteredUrl = `${this.apiURL}?orderBy="status"&equalTo="${filterTerm}"`;
+  
+  // Faça a solicitação HTTP
+  return this.http.get<Suino[]>(filteredUrl);
+}
+
+    
+    
 }

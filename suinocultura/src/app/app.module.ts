@@ -18,9 +18,6 @@ import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
 import { IdadePipe } from './pipes/idade.pipe';
-import { ContatoComponent } from './contato/contato.component';
-import { RodapeComponent } from './rodape/rodape.component';
-import { AuthGuardComponent } from './auth.guard/auth.guard.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +30,7 @@ import { AuthGuardComponent } from './auth.guard/auth.guard.component';
     PesoFormComponent,
     ListaPesoComponent,
     EditarPesoComponent,
-    IdadePipe,
-    ContatoComponent,
-    RodapeComponent,
-    AuthGuardComponent
+    IdadePipe
   ],
   imports: [
     BrowserModule,
