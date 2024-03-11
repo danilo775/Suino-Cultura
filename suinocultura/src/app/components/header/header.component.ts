@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.inscricao = this.autenticaService.usuario.subscribe(
       (usuario: Usuario) => { // Definindo o tipo do parâmetro 'usuario' como Usuario
-      
+        this.estaAutenticado = !usuario ? false : true;
       });
     this.estaAutenticado = !this.autenticaService.usuario.value ? false : true;
     console.log(this.estaAutenticado);
@@ -32,9 +32,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.estaAutenticado = false;
-    
-    console.log(this.autenticaService);
+    this.autenticaService.logout();
+    console.log(this.autenticaService.logout());
     setTimeout(() => {
       this.rotas.navigate(['']);
     }, 1000);

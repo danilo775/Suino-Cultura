@@ -78,15 +78,4 @@ adicionarSuino(Suino: {
       }
     );
     }
-
-    getFilteredSuino(filterTerm: string) {
-  // Construa o URL para filtragem corretamente usando "equalTo"
-  const filteredUrl = `${this.apiURL}?orderBy="status"&equalTo="${filterTerm}"`;
-  
-  // Faça a solicitação HTTP
-  return this.http.get<Suino[]>(filteredUrl);
-}
-
-    
-    
 }

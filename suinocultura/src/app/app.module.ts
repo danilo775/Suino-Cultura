@@ -18,6 +18,9 @@ import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
 import { IdadePipe } from './pipes/idade.pipe';
+import { ContatoComponent } from './contato/contato.component';
+import { RodapeComponent } from './rodape/rodape.component';
+import { AuthGuardComponent } from './auth.guard/auth.guard.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { IdadePipe } from './pipes/idade.pipe';
     PesoFormComponent,
     ListaPesoComponent,
     EditarPesoComponent,
-    IdadePipe
+    IdadePipe,
+    ContatoComponent,
+    RodapeComponent,
+    AuthGuardComponent
   ],
   imports: [
     BrowserModule,
