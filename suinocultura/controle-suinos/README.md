@@ -1,7 +1,7 @@
 # Suinocultura
 
 ## Equipe
-Danilo FontEnd1
+Danilo 
 Ricardo dos Santos Silva FontEnd3
 
 ## GitHub
