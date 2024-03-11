@@ -37,10 +37,16 @@ export class ListaPesoComponent  implements OnInit {
     console.log(id);
   }
 
-  deletarSuino(id: any) {
-    this.pesoService.deletarPeso(id).subscribe(() => {
-      console.log(id);
-    });
+  deletarPeso(id: any) {
+    this.pesoService.deletarPeso(id).subscribe(
+      () => {
+        // Atualizar a lista de pesos após a exclusão
+        this.getPesos();
+      },
+      (error) => {
+        console.error('Erro ao excluir o peso:', error);
+      }
+    );
   }
   editamovaPeso(id: any) {
     this.route.paramMap.subscribe(params => {

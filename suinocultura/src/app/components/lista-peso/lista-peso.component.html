@@ -14,7 +14,7 @@
           <td>{{ peso.dataPeso | date: 'dd/MM/yyyy' }}</td>
           <td>
             <button type="button" class="btn btn-warning m-2" routerLink="/ep/{{ suinoId }}">Editar</button>
-            <button type="button" class="btn btn-danger  " (click)="deletarSuino(peso.id)">Deletar</button>
+            <button type="button" class="btn btn-danger  " (click)="deletarPeso(peso.id)">Deletar</button>
           </td>
 
         </tr>

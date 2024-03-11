@@ -13,6 +13,9 @@
     <div class="form-group mt-3">
       <label for="dataPeso">Data da pesagem:</label>
       <input type="date" id="dataPeso" formControlName="dataPeso" class="form-control">
+      <div class="alert alert-danger" *ngIf="!peso?.valid && formSuino.touched">
+        <p *ngIf="dataPeso?.errors?.['required']">Data é obrigatório</p>
+      </div>
     </div>
 
 

@@ -18,6 +18,8 @@ import { PesoFormComponent } from './components/peso-form/peso-form.component';
 import { ListaPesoComponent } from './components/lista-peso/lista-peso.component';
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
 import { IdadePipe } from './pipes/idade.pipe';
+import { ContatoComponent } from './components/contato/contato.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { IdadePipe } from './pipes/idade.pipe';
     PesoFormComponent,
     ListaPesoComponent,
     EditarPesoComponent,
-    IdadePipe
+    IdadePipe,
+    ContatoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

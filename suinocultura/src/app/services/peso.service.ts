@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Peso } from '../model/peso.model';
 import { map, switchMap } from 'rxjs/operators';
 import { AutenticaService } from './autentica.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,8 @@ export class PesoService {
     });
   }
 
-  deletarPeso(id: string) {
+
+  deletarPeso(id: string): Observable<any> {
     return this.http.delete(`https://suinocultura-27005-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 }

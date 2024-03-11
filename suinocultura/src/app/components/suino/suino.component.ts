@@ -49,6 +49,7 @@ export class SuinoComponent  implements OnInit {
   deletarSuino(id:any){
     this.bancoService.deletarSuino(id).subscribe( () => {
       console.log(id);
+      this.getSuinos(); // Chama a função para recarregar os suínos após a exclusão
     })
   }
   rediracionaPrincipal(){
@@ -57,5 +58,5 @@ export class SuinoComponent  implements OnInit {
     }, 2000);
     
   }
-
+  
 }

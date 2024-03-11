@@ -46,6 +46,9 @@ export class PesoFormComponent {
   get peso() {
     return this.pesoForm.get('peso')!;
   }
+  get dataPeso() {
+    return this.pesoForm.get('dataPeso')!;
+  }
 
   // adicionarPeso(): void {
   //   if (this.pesoForm.invalid) {
