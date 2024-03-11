@@ -28,7 +28,7 @@
             <td>{{ suino.sexo}}</td>
             <!-- <td colspan="1">{{ suino.aeroportoChegada }}</td> -->
             <td><button type="button" class="btn btn-warning" routerLink="/editarSuino/{{suino.id}}">Editar</button></td>
-            <td><button type="button" class="btn btn-danger" (click)="deletarSuino(suino.id)">Excluir</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="deletarESeguir(suino.id) " >Excluir</button></td>
             <td><button type="button" class="btn btn-primary" routerLink="/peso/{{suino.id}}">Add Peso</button></td>
             <td><button type="button" class="btn btn-success" routerLink="/listarPeso/{{suino.id}}">Ver Peso</button></td>
             <!-- <td><button type="button" class="btnVerpeso" routerLink="/ep/{{suino.id}}">EDitar Peso</button></td> -->
