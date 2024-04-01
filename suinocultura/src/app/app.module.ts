@@ -20,6 +20,7 @@ import { EditarPesoComponent } from './components/editar-peso/editar-peso.compon
 import { IdadePipe } from './pipes/idade.pipe';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FooterComponent } from './components/footer/footer.component';
     EditarPesoComponent,
     IdadePipe,
     ContatoComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

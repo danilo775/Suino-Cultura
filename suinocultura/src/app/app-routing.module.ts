@@ -12,13 +12,13 @@ import { ContatoComponent } from './components/contato/contato.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'listarSuinos', component: SuinoComponent, canActivate: [AuthGuard]},
-  { path: 'contato', component: ContatoComponent, canActivate: [AuthGuard]},
-  { path: 'ep/:id', component: EditarPesoComponent, canActivate: [AuthGuard]},
-  { path:'adicionarSuinos', component: SuinoFormComponent, canActivate: [AuthGuard]},
-  { path: 'editarSuino/:id', component: SuinoEditarComponent, canActivate: [AuthGuard]},
-  { path: 'peso/:id', component: PesoFormComponent, canActivate: [AuthGuard]},
-  { path: 'listarPeso/:id', component: ListaPesoComponent, canActivate: [AuthGuard]},
+  { path: 'listarSuinos', component: SuinoComponent},
+  { path: 'contato', component: ContatoComponent},
+  { path: 'ep/:id', component: EditarPesoComponent},
+  { path:'adicionarSuinos', component: SuinoFormComponent},
+  { path: 'editarSuino/:id', component: SuinoEditarComponent},
+  { path: 'peso/:id', component: PesoFormComponent},
+  { path: 'listarPeso/:id', component: ListaPesoComponent},
 ];
 
 @NgModule({

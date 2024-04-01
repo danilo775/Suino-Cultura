@@ -11,11 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SuinoComponent  implements OnInit {
   loadedSuinos:Suino[] = [];
   filterTerm: string = ''; // Adicione uma variável para o termo de filtro
+  Suinos: string[] = [];
+  searchText: string = '';
+  column: string = '';
 
   constructor(private bancoService:BancoService, private rotas:Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getSuinos();
+    this.carregarFiltros();
   }
 
   getSuinos() {
@@ -56,7 +60,16 @@ export class SuinoComponent  implements OnInit {
     setTimeout(() => {
      this.rotas.navigate(['listarSuinos']);
     }, 2000);
-    
+
   }
-  
+  onSelectChange(event: any) {
+    this.column = event.target.value; // Atualiza collum com o valor da opção selecionada
+
+    console.log(event.target.value); // Aqui você pode lidar com a seleção do filtro
+  }
+
+  carregarFiltros() {
+    // Carrega os filtros disponíveis, substitua 'Suinos' com os filtros reais que você deseja usar
+    this.Suinos = ['brincoAnimal', 'brincoPai', 'brincoMae', 'dataNascimento', 'dataSaida', 'status', 'sexo'];
+  }
 }
