@@ -21,6 +21,7 @@ import { IdadePipe } from './pipes/idade.pipe';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SessaoComponent } from './components/sessao/sessao.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     IdadePipe,
     ContatoComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
+    SessaoComponent
   ],
   imports: [
     BrowserModule,

@@ -9,16 +9,18 @@ import { ListaPesoComponent } from './components/lista-peso/lista-peso.component
 import { EditarPesoComponent } from './components/editar-peso/editar-peso.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ContatoComponent } from './components/contato/contato.component';
+import { SessaoComponent } from './components/sessao/sessao.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
-  { path: 'listarSuinos', component: SuinoComponent},
-  { path: 'contato', component: ContatoComponent},
-  { path: 'ep/:id', component: EditarPesoComponent},
-  { path:'adicionarSuinos', component: SuinoFormComponent},
-  { path: 'editarSuino/:id', component: SuinoEditarComponent},
-  { path: 'peso/:id', component: PesoFormComponent},
-  { path: 'listarPeso/:id', component: ListaPesoComponent},
+  { path: 'listarSuinos', component: SuinoComponent, canActivate: [AuthGuard]},
+  { path: 'contato', component: ContatoComponent, canActivate: [AuthGuard]},
+  { path: 'ep/:id', component: EditarPesoComponent, canActivate: [AuthGuard]},
+  { path:'adicionarSuinos', component: SuinoFormComponent, canActivate: [AuthGuard]},
+  { path: 'editarSuino/:id', component: SuinoEditarComponent, canActivate: [AuthGuard]},
+  { path: 'peso/:id', component: PesoFormComponent, canActivate: [AuthGuard]},
+  { path: 'listarPeso/:id', component: ListaPesoComponent, canActivate: [AuthGuard]},
+  { path: 'sessao', component: SessaoComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

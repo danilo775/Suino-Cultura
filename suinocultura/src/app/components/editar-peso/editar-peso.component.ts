@@ -35,7 +35,7 @@ export class EditarPesoComponent {
 
   ngOnInit() {
     this. pesoForm = this.formConstrutor.group({
-      peso: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],  
+      peso: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       dataPeso: ['', Validators.required],
     });
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -43,7 +43,7 @@ export class EditarPesoComponent {
     console.log(this.id);
   }
 
- 
+
   getPeso(id: any) {
     console.log("ID do peso:", id); // Verifica o ID do peso
     this.pesoService.getSuin(id).subscribe(responseData => {
@@ -56,7 +56,7 @@ export class EditarPesoComponent {
       }
     });
   }
-  
+
 
   salvarPeso() {
     console.log("salvar Peso: " + this.pesoForm.value);
@@ -76,6 +76,6 @@ export class EditarPesoComponent {
     setTimeout(() => {
      this.rotas.navigate(['listarSuinos']);
     }, 2000);
-    
+
   }
 }

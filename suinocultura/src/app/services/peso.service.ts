@@ -74,9 +74,9 @@ export class PesoService {
 
 
 
-  
-  
-  
+
+
+
 
   getSuino2() {
     return this.http.get('https://suinocultura-27005-default-rtdb.firebaseio.com/posts.json', {

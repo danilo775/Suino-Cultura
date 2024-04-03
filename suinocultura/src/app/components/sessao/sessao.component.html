@@ -1,0 +1,41 @@
+<div class="corpo">
+  <form [formGroup]="sessaoForm" #formSessao="ngForm" (ngSubmit)="adicionarSessao()" class="p-3">
+
+    <div class="form-group col">
+      <label for="brincoAnimal">Brinco do Animal:</label>
+      <select class="form-select" id="brincoAnimal" formControlName="brincoAnimal">
+        <option value="">Selecione o brinco do animal</option>
+        <!-- Iterar sobre os brincos dos suínos -->
+        <option *ngFor="let brinco of brincosSuinos" [value]="brinco">{{ brinco }}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-4 col">
+      <label for="dataSessao">Data da sessao:</label>
+      <input type="date" id="dataSessao" formControlName="dataSessao" class="form-control">
+    </div>
+
+    <div class="form-group mt-4 col">
+      <label for="atividade">Atividade do Animal:</label>
+      <select class="form-select form-select-sm" id="atividade" formControlName="atividade">
+        <optgroup>
+          <option value="">Selecione Uma Atividade</option>
+          <!-- Iterar sobre as atividades disponíveis -->
+          <option *ngFor="let atividade of Sessao" [value]="atividade">{{ atividade }}</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-group mt-3 col">
+      <label for="informacao">Informação adicional:</label>
+      <!-- Utilize a tag textarea para criar uma área de texto -->
+      <textarea id="informacao" formControlName="informacao" class="form-control" rows="4"></textarea>
+      <!-- Exemplo de validação para campo obrigatório -->
+      <div class="alert alert-danger" *ngIf="!sessaoForm.get('informacao')?.valid && formSessao.touched">
+        <p *ngIf="sessaoForm.get('informacao')?.errors?.['required']">Este campo é obrigatório.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark mt-3">Cadastrar</button>
+  </form>
+</div>

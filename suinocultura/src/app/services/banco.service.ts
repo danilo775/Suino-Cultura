@@ -14,7 +14,7 @@ export class BancoService {
 
   constructor(private http: HttpClient, private autenticaService: AutenticaService) { }
 
-adicionarSuino(Suino: {    
+adicionarSuino(Suino: {
                           brincoAnimal: number;
                           brincoPai: number;
                           brincoMae: number;
@@ -49,8 +49,8 @@ adicionarSuino(Suino: {
     getSuin(id: string) {
       return this.http.get<Suino>(`https://suinocultura-27005-default-rtdb.firebaseio.com/posts/${id}.json`);
     }
-    
-  
+
+
       apagarTodosSuinos() {
         return this.http.delete('https://suinocultura-27005-default-rtdb.firebaseio.com/posts.json');
       }
@@ -58,7 +58,7 @@ adicionarSuino(Suino: {
         return this.http.delete(`https://suinocultura-27005-default-rtdb.firebaseio.com/posts/${id}.json`);
       }
 
-      editarSuino(id:string, SuinoData: {   
+      editarSuino(id:string, SuinoData: {
                                               brincoAnimal: number;
                                               brincoPai: number;
                                               brincoMae: number;
@@ -82,11 +82,23 @@ adicionarSuino(Suino: {
     getFilteredSuino(filterTerm: string) {
   // Construa o URL para filtragem corretamente usando "equalTo"
   const filteredUrl = `${this.apiURL}?orderBy="status"&equalTo="${filterTerm}"`;
-  
+
   // Faça a solicitação HTTP
   return this.http.get<Suino[]>(filteredUrl);
 }
 
-    
-    
+getBrincosSuinos() {
+  return this.http.get<{ [key: string]: any }>(this.apiURL).pipe(
+    map(responseData => {
+      const brincos: string[] = [];
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)) {
+          brincos.push(responseData[key].brincoAnimal); // Supondo que 'brincoAnimal' seja o campo que contém o brinco do suíno
+        }
+      }
+      return brincos;
+    })
+  );
+}
+
 }
