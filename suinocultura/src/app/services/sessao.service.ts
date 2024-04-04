@@ -8,7 +8,7 @@ import { AutenticaService } from './autentica.service';
 })
 export class SessaoService {
 
-  apiURL = 'https://suinocultura-27005-default-rtdb.firebaseio.com/posts.json';
+  apiURL = 'https://suinocultura-27005-default-rtdb.firebaseio.com/sessao.json';
 
   constructor(private http: HttpClient, private autenticaService: AutenticaService) { }
 

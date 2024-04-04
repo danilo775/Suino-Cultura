@@ -41,6 +41,6 @@ export class SessaoComponent {
 
   carregarAtividade() {
     // Carrega as atividades disponíveis que você deseja usar
-    this.Sessao = ['Raiva', 'Rinite Atrofica', 'brincoMae', 'Abate', 'Racao', 'comer', 'marcacao'];
+    this.Sessao = ['Raiva', 'Rinite Atrofica', 'Abate', 'Racao', 'marcacao'];
   }
 }

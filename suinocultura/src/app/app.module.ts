@@ -22,6 +22,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SessaoComponent } from './components/sessao/sessao.component';
+import { ListaSessaoComponent } from './components/lista-sessao/lista-sessao.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SessaoComponent } from './components/sessao/sessao.component';
     ContatoComponent,
     FooterComponent,
     FilterPipe,
-    SessaoComponent
+    SessaoComponent,
+    ListaSessaoComponent
   ],
   imports: [
     BrowserModule,
